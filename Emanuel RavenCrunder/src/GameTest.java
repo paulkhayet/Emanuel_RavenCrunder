@@ -20,5 +20,17 @@ public class GameTest {
 		System.out.println("You follow a path through the trees\n" + 
 				"and come across a man.");
 		garthF.meet(player);
+		
+		System.out.print("\nEnter any key to continue...");
+		input.nextLine();
+		
+		clear();
+		System.out.println("To Be continued...");
+	}
+	
+	public static void clear() {
+		for(int i = 0; i < 30; i++) {
+			System.out.println();
+		}
 	}
 }

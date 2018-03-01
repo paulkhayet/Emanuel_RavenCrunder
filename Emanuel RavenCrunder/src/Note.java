@@ -5,11 +5,12 @@ public class Note extends Item{
 		super(n, d);
 	}
 	
-	public void use() {
+	public void use(Player p) {
 		System.out.println(this.toString());
 	}
 	
 	public String toString() {
-		return this.getName() + ":\n" + this.getDescription();
+		return "\nYou have received a note!\n\n" + 
+		this.getName() + ":\n" + this.getDescription();
 	}
 }

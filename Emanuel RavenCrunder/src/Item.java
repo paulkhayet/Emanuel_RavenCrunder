@@ -5,5 +5,5 @@ public abstract class Item extends NamedThing{
 		super(n, d);
 	}
 	
-	public abstract void use();
+	public abstract void use(Player p);
 }
