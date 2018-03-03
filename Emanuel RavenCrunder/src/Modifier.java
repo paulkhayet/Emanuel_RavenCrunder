@@ -18,4 +18,18 @@ public class Modifier extends Item{
 		p.addSneak(sneak);
 		p.addSpeech(speech);
 	}
+	
+	public String toString() {
+		String s = this.getName() + ": " + this.getDescription();
+		if(strength > 0)
+			s += "\nStrength: +" + strength;
+		if(magic > 0)
+			s += "\nMagic: +" + magic;
+		if(sneak > 0)
+			s += "\nSneak: +" + sneak;
+		if(speech > 0)
+			s += "\nSpeech: +" + speech;
+		
+		return s;
+	}
 }

@@ -51,4 +51,8 @@ public class Player extends Entity {
 	public boolean convince(NPC npc) {
 		return this.getSpeech() >= npc.getSpeech();
 	}
+	
+	public boolean sneakAround(NPC npc) {
+		return this.getSneak() >= npc.getSneak();
+	}
 }

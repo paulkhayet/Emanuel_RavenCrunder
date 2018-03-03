@@ -25,7 +25,11 @@ public class GameTest {
 		input.nextLine();
 		
 		clear();
-		System.out.println("To Be continued...");
+		
+		System.out.println("You continue down the road and come across a large ogre\n");
+		Fergus fergus = new Fergus();
+		fergus.meet(player);
+		
 	}
 	
 	public static void clear() {
