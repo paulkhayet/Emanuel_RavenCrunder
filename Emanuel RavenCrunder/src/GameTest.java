@@ -24,8 +24,6 @@ public class GameTest {
 		System.out.print("\nEnter any key to continue...");
 		input.nextLine();
 		
-		clear();
-		
 		System.out.println("You continue down the road and come across a large ogre\n");
 		Fergus fergus = new Fergus();
 		fergus.meet(player);

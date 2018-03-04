@@ -4,10 +4,16 @@ import java.util.Scanner;
 public class Player extends Entity {
 	
 	private Scanner input;
+	private boolean hasEgg;
 	
 	public Player(String n, String d) {
 		super(n, d, 0, 0, 0, 0);
 		input = new Scanner(System.in);
+		hasEgg = false;
+	}
+	
+	public void getEgg() {
+		hasEgg = true;
 	}
 	
 	public String toString() {
@@ -35,6 +41,14 @@ public class Player extends Entity {
 				return n;
 			}
 		}
+	}
+	
+	public boolean chooseYesOrNo() {
+		System.out.println("1. Yes");
+		System.out.println("2. No");
+		
+		int n = chooseOption(1, 2);
+		return n == 1;
 	}
 	
 	public boolean fight(NPC npc) {
