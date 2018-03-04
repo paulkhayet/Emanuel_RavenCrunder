@@ -5,13 +5,15 @@ public class GameTest {
 
 		Scanner input = new Scanner(System.in);
 		Player player = new Player("", "Unknown Adventurer");
-		
+
+		player.clear();
 		System.out.println("You awake in the middle of the woods.\n" + 
 				"You don't know where you are or why you are here,\n" +
 				"but you know who you are...");
 		
 		System.out.print("Enter your name: ");
 		player.setName(player.acceptString());
+		player.clear();
 		System.out.println("\nWelcome, " + player.getName()
 				+ ", to " + 
 				"Emanuel RavenCrunder\n");
@@ -20,9 +22,7 @@ public class GameTest {
 		System.out.println("You follow a path through the trees\n" + 
 				"and come across a man.");
 		garthF.meet(player);
-		
-		System.out.print("\nEnter any key to continue...");
-		input.nextLine();
+		player.clear();
 		
 		System.out.println("You continue down the road and come across a large ogre\n");
 		Fergus fergus = new Fergus();

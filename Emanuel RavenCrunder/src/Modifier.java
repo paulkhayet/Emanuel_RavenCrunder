@@ -17,6 +17,19 @@ public class Modifier extends Item{
 		p.addMagic(magic);
 		p.addSneak(sneak);
 		p.addSpeech(speech);
+		
+		System.out.println("\nYou have received a " + this.getName());
+		System.out.println("Your " + this.getDescription());
+		
+	}
+	
+	public void unUse(Player p) {
+		p.addStrength(-strength);
+		p.addMagic(-magic);
+		p.addSneak(-sneak);
+		p.addSpeech(-speech);
+		
+		System.out.println("\nYou have lost your " + this.getName());
 	}
 	
 	public String toString() {

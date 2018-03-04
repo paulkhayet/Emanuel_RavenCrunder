@@ -11,14 +11,14 @@ public class GarthFields extends NPC{
 	}
 	
 	public void meet(Player p) {
-		System.out.println();
+
 		this.say("Greetings traveler");
 		
 		System.out.println("1. \"Who are you?\"");
 		System.out.println("2. \"I don't like your tone...\" (attack)");
 		
 		int n = p.chooseOption(1, 2);
-		System.out.println();
+
 		if(n == 1) {
 			((Entity)this).setName("Garth Fields");
 			this.say("My name is Garth Fields, I'm a traveler");
@@ -27,7 +27,7 @@ public class GarthFields extends NPC{
 			System.out.println("2. \"That's a nice note you got, you don't need it do you?\" (speech)");
 			System.out.println("3. \"That's a ripoff of the famous comic strip!\" (attack)");
 			n = p.chooseOption(1, 3);
-			System.out.println();
+
 			if(n == 1) {
 				this.say("Farewell!");
 				return;

@@ -38,6 +38,7 @@ public class Player extends Entity {
 			if(n < min || n > max) {
 				System.out.println("/nNot an option");
 			} else {
+				this.clear();
 				return n;
 			}
 		}
@@ -54,7 +55,10 @@ public class Player extends Entity {
 	public boolean fight(NPC npc) {
 		if(this.getStrength() >= npc.getStrength()) {
 			System.out.println("\nYou have defeated " + npc.getName() + "!");
-			npc.getDrop().use(this);
+			
+			if(npc.hasDropItem())
+				npc.getDrop().use(this);
+			
 			return true;
 		} else {
 			System.out.println("\nYou have been defeated by " + npc.getName() + "!");
