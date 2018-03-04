@@ -3,7 +3,6 @@ public class Fergus extends NPC {
 	
 	public Fergus() {
 		super("The Ogre", "The Monstrous Ogre", 3, 1, 10, 0);
-		this.setItem(new Egg());
 	}
 
 	public void meet(Player p) {
@@ -23,7 +22,75 @@ public class Fergus extends NPC {
 				this.escapeTheCabin(p);
 			}
 		} else {
+			System.out.println("You walk towards the ogre head on and he sees you.");
+			this.setName("Fergus");
+			this.say("Halt trespasser! This land belongs to I, Fergus the Ogre!");
 			
+			System.out.println("1. Attempt to sneak past him even though he undoubtably sees you.");
+			System.out.println("2. (Lie)\"Don't you know who I am?!?! I am Emanuel RavenCrunder!\n" +
+					"   Ruler of this kingdom and therefore this land!\"");
+			System.out.println("3. \"I don't recognize your ownership of this land because you \n" +
+					"   have not shown me the proper paperwork proving said ownership of said land.\n" +
+					"   If there's one thing I hate more than ogres, its unlawful seizing of land.\n" +
+					"   Die!\" (attack)");
+			option = p.chooseOption(1, 3);
+			System.out.println();
+			if(option == 1) {
+				this.say("Come on man I see you. Don't even try to pretend you're good at this.\n" +
+						"Stop covering your own eyes. Just because you can't see me doesn't mean\n" +
+						"I can't see you! You're like my 5 year old nephew.\"");
+				System.out.println("\nFergus hits you with a nearby fallen tree trunk and you are knocked unconsious.");
+				this.escapeTheCabin(p);
+			} else if(option == 2) {
+				this.say("Hmmm, that name does sound familiar...");
+				this.say("But how come you aren't wearing any royal clothing?");
+				this.say("You are dressed like a lowly commoner.");
+				
+				System.out.println("1. \"Casual friday?\"");
+				System.out.println("2. \"I am undercover on a top secret mission the nature of\n" +
+						"which you cannot know.\"");
+				System.out.println("3. \"At least I don't look like a sentient booger!\" (attack)");
+				option = p.chooseOption(1, 3);
+				System.out.println();
+				
+				if(option == 1) {
+					this.say("I don't know how to use a calender, but I'm going to assume\n" +
+							"it isn't actually Friday. That makes you a liar. Just like that\n" +
+							"no good life-wrecking devil of a woman Rhonda! Why? Why did you\n" +
+							"have to go and throw all we had away? All I wanted was a lifelong\n" +
+							"partner. All you wanted someone to puppeteer. You used me!\n" +
+							"You witch! You evil dirty rotten...");
+					System.out.println("\nWhile Fergus has a mental breakdown, you are able\n" +
+							"to sneak right past him. He is blinded by the pure seething hatred\n" +
+							"he feels for that alleged \'devil of a woman\'. You can't help\n" + 
+							"but feel a little sorry for him, especially since it actually is Friday.");
+				} else if(option == 2) {
+					this.say("Oh wow you sound serious. You don't seem at all like\n" +
+							"you are using a made up name and a made up story to\n" +
+							"avoid a conflict. Let me invite you to my cabin in the woods.\n" +
+							"I want nothing more than to help you on your extremely\n" +
+							"legitimate and immensely important secret mission.");
+					System.out.println("\nFergus's erie switch of tone makes it impossible\n" +
+							"for you to decline his offer. You travel with him to his house.");
+					this.hangWithFergus(p);
+				} else {
+					this.say("If I'm a booger, than you're the upper respiratory viral infectuous\n" +
+							"disease that led to my existence! AHHHHHHHHHHH!");
+					System.out.println("\nDue to Fergus's unexpected sensitivity to being\n" +
+							"compared to a booger, he erupts in a fit of rage and screams\n" +
+							"so loud you're whole body vibrates and you fall unconsious.");
+					this.escapeTheCabin(p);
+				}
+			} else {
+				System.out.println("Fergus easily knocks you to the ground. I mean,\n" +
+						"he's an ogre. What were you thinking?\n");
+				this.say("HAHA! You fool! I've been carrying the paperwork this entire time!\n" +
+						"Just because I'm an ogre you expect me to not follow the law?\n" +
+						"Bullfiddle!");
+				System.out.println("\nOvercome with shock at the poor font choice on his\n" +
+						"legal documents, you faint.");
+				this.escapeTheCabin(p);
+			}
 		}
 	}
 
@@ -103,12 +170,13 @@ public class Fergus extends NPC {
 			this.say("...d...dd....ddd..");
 			System.out.println("\n");
 			this.say("DONKEY!");
+			
 			System.out.println("\nYou exit his cabin, broken and ashamed.");
 		} else if(option == 2){
 			System.out.println("\nYou pick up the egg and put it carefully in your\n" +
 					"totally-manly-and-definitely-not-a-purse satchel and walk out\n" +
 					"into the cold, expanse of wilderness.");
-			this.getDrop().use(p);
+			p.getEgg();
 		} else {
 			System.out.println("\nAs you exit his cabin, you feel a strange feeling\n" +
 					"that urges you to stay with " + this.getName() + " forever.");
@@ -117,8 +185,12 @@ public class Fergus extends NPC {
 			System.out.println("Maybe he's just trying to get by just like you.");
 			System.out.println("Maybe he needs someone like you to change his path.");
 			System.out.println("\nBut it's probably just Stockholm Syndrome " + 
-					"so you get the hell outta there.");
+					"so you get the hell outta there and never look back.");
 			
 		}
+	}
+	
+	public void hangWithFergus(Player p) {
+		
 	}
 }

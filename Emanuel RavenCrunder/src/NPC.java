@@ -19,6 +19,6 @@ public abstract class NPC extends Entity{
 	}
 	
 	public void say(String s) {
-		System.out.println(this.getName() + ": " + s);
+		System.out.println(this.getName() + ": \"" + s + "\"");
 	}
 }
