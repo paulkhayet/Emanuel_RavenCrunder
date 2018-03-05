@@ -22,6 +22,8 @@ public class GameTest {
 		System.out.println("You follow a path through the trees\n" + 
 				"and come across a man.");
 		garthF.meet(player);
+		System.out.print("\nEnter any key to continue...");
+		player.acceptString();
 		player.clear();
 		
 		System.out.println("You continue down the road and come across a large ogre\n");
